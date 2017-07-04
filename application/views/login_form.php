@@ -1,3 +1,10 @@
+<?php
+if(isset($this->session->userdata['signedIn']))
+{
+    header('location:'.base_url().'index.php/loginController/login');
+    exit();
+} 
+?>
 <html>
 <head>
 <title>

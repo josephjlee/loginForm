@@ -6,7 +6,7 @@ if(isset($this->session->userdata['signedIn']))
 } 
 else
 {
-    redirect(base_url().'index.php/login');
+    redirect(base_url().'index.php/loginController');
 }
 ?>
 <html>

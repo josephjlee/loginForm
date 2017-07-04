@@ -3,6 +3,12 @@
 <title>
 Sign Up </title>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
+<?php
+if(isset($this->session->userdata['signedIn']))
+{
+    redirect(base_url().'index.php/loginController/login');
+} 
+?>
 </head>
 <body>
 <div id="login">

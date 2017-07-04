@@ -89,6 +89,15 @@ class LoginController extends CI_Controller
              }
          }
      }
+     
+     /**
+      * show sign up page
+      */
+      public function showSignup()
+      {
+        //load sign up view
+        $this->load->view('signup_form');
+      }
     
 }
 ?>

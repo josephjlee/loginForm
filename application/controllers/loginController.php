@@ -99,5 +99,43 @@ class LoginController extends CI_Controller
         $this->load->view('signup_form');
       }
     
+    /**
+     * sign up new user
+     */
+     public function signup()
+     {
+        //validate user inputs
+        $this->form_validation->set_rules('username','UserName','trim|required');
+        $this->form_validation->set_rules('email','Email','trim|required');
+        $this->form_validation->set_rules('password','Password','trim|required');
+        
+        if($this->form_validation->run()==false)
+        {
+            $this->load->view('signup_form');
+        }
+        else
+        {
+           $data=array(
+           'name'=>$this->input->post('username'),
+           'email'=>$this->input->post('email'),
+           'password'=>$this->input->post('password')
+           ); 
+           
+            $ret=$this->loginModel->addUser($data);
+            
+            if($ret==true)
+            {
+                $data['msg']='Registration Successfully';
+                //show login page 
+                $this->load->view('login_form',$data);
+            }
+            else
+            {
+                $data['msg']='Already registered user';
+                 $this->load->view('signup_form',$data);
+            }
+           
+        }
+     }
 }
 ?>

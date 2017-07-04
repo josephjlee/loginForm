@@ -137,5 +137,18 @@ class LoginController extends CI_Controller
            
         }
      }
+     
+     /**
+      * log out 
+      */
+      public function logout()
+      {
+       $this->session->sess_destroy();
+       
+       $data['msg']='successfully logout';
+       
+       $this->load->view('login_form',$data);
+       
+      }
 }
 ?>

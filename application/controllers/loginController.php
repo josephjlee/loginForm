@@ -25,7 +25,12 @@ class LoginController extends CI_Controller
         $this->load->database();
     }
     
-    
+    //default method 
+    public function index()
+    {
+        //show login page
+        $this->load->view('login_form');
+    }
     
 }
 ?>

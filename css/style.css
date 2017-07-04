@@ -1,0 +1,17 @@
+body
+{
+    margin:0;
+}
+
+#login ,#profile
+{
+    width: 960px;
+    margin: 50px auto;
+    border: 2px solid #ccc;
+    padding: 10px 40px 25px;
+}
+#login input
+{
+    padding:5px;
+    margin: 10px;
+}

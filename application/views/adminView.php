@@ -1,6 +1,6 @@
 <?php
 if(isset($this->session->userdata['signedIn']))
-{
+{ 
     $name=$this->session->userdata['signedIn']['name'];
     $email=$this->session->userdata['signedIn']['email'];
 } 

@@ -44,7 +44,15 @@ class LoginController extends CI_Controller
          
          if($this->form_validation->run()==false)
          {
-            $this->load->view('login_form');
+            if(isset($this->session->userdata['signedIn']))
+            {
+                 $this->load->view('adminView');
+            }
+            else
+            {
+               $this->load->view('login_form'); 
+            }
+            
          }
          else //input data is valid
          {

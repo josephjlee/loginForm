@@ -14,9 +14,9 @@ echo form_open('loginController/login');
 <?php
 
 //print any login errors 
-if(isset($loginError))
+if(isset($msg))
 {
-    echo $loginError;
+    echo $msg;
 }
 //print validation errors
 echo validation_errors(); 

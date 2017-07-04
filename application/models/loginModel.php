@@ -21,7 +21,7 @@ class LoginModel extends CI_Model
         $this->db->select('*');
         $this->db->from('users');
         $this->db->where($condition);
-        $this->limit(1);
+        $this->db->limit(1);
         
         $query=$this->db->get();
         
@@ -51,7 +51,7 @@ class LoginModel extends CI_Model
         $this->db->select('*');
         $this->db->from('users');
         $this->db->where($condition);
-        $this->limit(1);
+        $this->db->limit(1);
         
         $query=$this->db->get();
         
@@ -85,11 +85,11 @@ class LoginModel extends CI_Model
      */
      public function readUserInfo($username)
      {
-         $condition ="name ='$userName'";
+        $condition ="name ='$username'";
         $this->db->select('*');
         $this->db->from('users');
         $this->db->where($condition);
-        $this->limit(1);
+        $this->db->limit(1);
         
         $query=$this->db->get();
         

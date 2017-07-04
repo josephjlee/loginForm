@@ -78,7 +78,31 @@ class LoginModel extends CI_Model
          
     }
     
-    
+    /**
+     * get user informaion
+     * @param string $username 
+     * @return array of data or false if not exist
+     */
+     public function readUserInfo($username)
+     {
+         $condition ="name ='$userName'";
+        $this->db->select('*');
+        $this->db->from('users');
+        $this->db->where($condition);
+        $this->limit(1);
+        
+        $query=$this->db->get();
+        
+        if($query->num_rows()==1)
+        {
+            return $query->result();
+        }
+        else
+        {
+            return false;
+        }
+     }
+     
     
 }
 ?>
